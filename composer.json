@@ -1,0 +1,38 @@
+{
+    "name": "wilsonpinto/laravel-blade-directives",
+    "type": "library",
+    "description": "Laravel custom blade directives.",
+    "keywords": [
+        "laravel", "blade", "directives", "template", "view", "render", "extend"
+    ],
+    "homepage": "https://github.com/wilsonpinto/laravel-blade-directives",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Wilson Pinto",
+            "email": "wilsonpinto360@gmail.com"
+        }
+    ],
+    "require": {
+        "php" : ">=5.5.0",
+        "illuminate/support": "5.1.*|5.2.*|5.3.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.0",
+        "friendsofphp/php-cs-fixer": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Wilsonpinto\\Blade\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Wilsonpinto\\Blade\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "cs": "php-cs-fixer fix src --level=psr2 --verbose",
+        "test": "phpunit --verbose"
+    }
+}
