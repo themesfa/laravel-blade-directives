@@ -15,6 +15,7 @@ namespace Wilsonpinto\Blade\Tests;
 
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Wilsonpinto\Blade\Directives\AssignmentDirectives;
+use Wilsonpinto\Blade\Directives\IteratorDirectives;
 use Jenssegers\Blade\Blade;
 
 class BladeDirectivesTest extends \PHPUnit_Framework_TestCase
@@ -25,15 +26,24 @@ class BladeDirectivesTest extends \PHPUnit_Framework_TestCase
     {
         $this->blade = new Blade('tests/views', 'tests/cache');
 
-        $directives = [];
+        $directives = [
+            'newlinesToBr' => function ($expression) {
+                return "<?php echo nl2br{$expression}; ?>";
+            },
+            'datetime' => function ($expression) {
+                return "<?php echo with({$expression})->format('F d, Y g:i a'); ?>";
+            }
+        ];
 
-        AssignmentDirectives::register($this->blade, $directives);
+        $bladeCompiler = $this->blade->getEngineResolver()->resolve('blade')->getCompiler();
+
+        AssignmentDirectives::register($bladeCompiler, $directives);
     }
 
-    public function testRenderAlias()
+    public function testDatetimeDirective()
     {
-        $output = $this->blade->render('basic');
-        $this->assertEquals('hello world', trim($output));
+        $output = $this->blade->render('datetime');
+        $this->assertEquals('January 01, 2017 11:59 pm', trim($output));
     }
 
     /**

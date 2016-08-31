@@ -23,13 +23,21 @@ class IteratorDirectives
      */
     public static function get($filesystem, $config)
     {
-        $directives = array_merge(
+        $customDirectives = array_merge(
             $filesystem->getRequire(__DIR__ . '/../directives.php'),
             $config->get('blade-directives.directives') ?: []
         );
-        
+
         $excludeDirectives = $config->get('blade-directives.exclude') ?: [];
 
-        return array_diff_key($directives, $excludeDirectives);
+        $directives = [];
+        foreach ($customDirectives as $name => $directive) {
+            if (in_array($name, $excludeDirectives)) {
+                continue;
+            }
+            $directives[$name] = $directive;
+        }
+
+        return $directives;
     }
 }
