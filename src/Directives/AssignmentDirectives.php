@@ -25,7 +25,7 @@ class AssignmentDirectives
      * @param  array $config
      * @return void
      */
-    public static function register(Application $app, $config)
+    public static function register(Application $app, array $config)
     {
         $blade = $app->make('view')->getEngineResolver()->resolve('blade')->getCompiler();
 
