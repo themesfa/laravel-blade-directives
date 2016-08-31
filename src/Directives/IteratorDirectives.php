@@ -21,7 +21,7 @@ class IteratorDirectives
      * @param  \Illuminate\Config\Repository $config
      * @return array
      */
-    public static function get(Filesystem $filesystem, Repository $config)
+    public static function get($filesystem, $config)
     {
         $directives = array_merge(
             $filesystem->getRequire(__DIR__ . '/../directives.php'),
