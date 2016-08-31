@@ -12,7 +12,7 @@
  */
 
 return [
-	'newlinesToBr' => function ($expression) {
-		return "<?php echo nl2br{$expression}; ?>";
+    'newlinesToBr' => function ($expression) {
+        return "<?php echo nl2br{$expression}; ?>";
     },
 ];
