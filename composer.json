@@ -1,7 +1,7 @@
 {
     "name": "wilsonpinto/laravel-blade-directives",
     "type": "library",
-    "description": "Laravel custom blade directives.",
+    "description": "This package adds custom directives for the Laravel 5 blade engine.",
     "keywords": [
         "laravel", "blade", "directives", "template", "view", "render", "extend"
     ],
@@ -14,7 +14,7 @@
         }
     ],
     "require": {
-        "php" : ">=5.5.0",
+        "php": ">=5.5.0",
         "illuminate/support": "5.1.*|5.2.*|5.3.*"
     },
     "require-dev": {
