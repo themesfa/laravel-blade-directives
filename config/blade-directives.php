@@ -7,7 +7,7 @@ return [
     | Directives
     |--------------------------------------------------------------------------
     |
-    | custom your our own diresctives using proper handler
+    | custom your our own directives using proper handler
     |
     */    	 
     'directives' => [
