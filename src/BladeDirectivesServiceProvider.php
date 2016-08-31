@@ -28,7 +28,7 @@ class BladeDirectivesServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__ . '/../config/blade-directives.php' => config_path('blade-directives.php')
-        ], 'config');
+        ]);
 
         $config = array_merge(
             config('blade-directives') ?: [],
@@ -39,5 +39,15 @@ class BladeDirectivesServiceProvider extends ServiceProvider
         );
 
         AssignmentDirectives::register($this->app, $config);
+    },
+
+    /**
+     * Register the service provider.
+     */
+    public function register()
+    {
+        $this->mergeConfigFrom(
+            __DIR__.'/../config/blade-directives.php', 'blade-directives'
+        );
     }
 }
