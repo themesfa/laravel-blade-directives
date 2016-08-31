@@ -30,14 +30,12 @@ class BladeDirectivesServiceProvider extends ServiceProvider
             __DIR__ . '/../config/blade-directives.php' => config_path('blade-directives.php')
         ]);
 
-        $config = array_merge(
-            config('blade-directives') ?: [],
-            [
-                'directives' => config('blade-directives.directives') ?: [],
-                'exclude' => config('blade-directives.exclude') ?: []
-            ]
-        );
+        $blade = $this->app->make('blade.compiler');
 
-        AssignmentDirectives::register($this->app, $config);
+        $filesystem = $this->app->make('files');
+
+        $config = $this->app->make('config');
+
+        AssignmentDirectives::register($blade, IteratorDirectives::get($filesystem, $config));
     }
 }
