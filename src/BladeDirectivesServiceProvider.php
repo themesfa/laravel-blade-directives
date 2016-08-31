@@ -39,15 +39,5 @@ class BladeDirectivesServiceProvider extends ServiceProvider
         );
 
         AssignmentDirectives::register($this->app, $config);
-    },
-
-    /**
-     * Register the service provider.
-     */
-    public function register()
-    {
-        $this->mergeConfigFrom(
-            __DIR__.'/../config/blade-directives.php', 'blade-directives'
-        );
     }
 }
