@@ -1,14 +1,29 @@
 <?php
 
 return [
-    
-    //Customize or override your own directives    	 
+
+    /*
+    |--------------------------------------------------------------------------
+    | Directives
+    |--------------------------------------------------------------------------
+    |
+    | custom your our own diresctives using proper handler
+    |
+    */    	 
     'directives' => [
         'datetime'   => function($expression) {
             return "<?php echo $expression->format('m/d/Y H:i'); ?>";
         },
     ],
 
-    //Exclude directives 
+    /*
+    |--------------------------------------------------------------------------
+    | Exclude
+    |--------------------------------------------------------------------------
+    |
+    | exclude directives
+    |
+    */
     'exclude' => []
+    
 ];
