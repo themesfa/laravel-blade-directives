@@ -2,6 +2,10 @@
 
 This package adds custom directives for the Laravel 5 blade engine.
 
+| Command                | Description   			                                                          |
+| ---------------------- | :--------------------------------------------------------------------------------: |
+| @newlinesToBr(string)  | Inserts HTML line breaks before all newlines in a string.	 			          |
+
 ## Installation
 
 Install the package using Composer.
@@ -58,14 +62,6 @@ return [
 ```bash
 php artisan view:clear
 ```
-
-## Directives
-
-This Laravel 5 package provides a variety of directives to speed up your development. These directives include:
-
-| Command                | Description   			                                                          |
-| ---------------------- | :--------------------------------------------------------------------------------: |
-| @newlinesToBr(string)  | Inserts HTML line breaks before all newlines in a string.	 			          |
 
 ## Usage
 
