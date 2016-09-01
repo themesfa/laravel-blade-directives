@@ -94,7 +94,9 @@ php artisan view:clear
 ## Contributing
 This package is always open to contributions:
 
+
 * Master will always contain the newest work, however it may not always be stable; use at your own risk.  Every new tagged release will come from the work done on master.
+
 
 ## License
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
