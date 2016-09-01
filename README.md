@@ -7,7 +7,7 @@ This package adds custom directives for the Laravel 5 blade engine.
 | @set($variable, value)              | Creating (declaring) PHP variables                                         |
 | @implode($delimiter, $array)        | PHP implode() function                                                     |
 | @explode($delimiter, $string)       | PHP explode() function                                                     |
-| @var_Dump($variable)                | PHP var_dump() function                                                    |
+| @var_dump($variable)                | PHP var_dump() function                                                    |
 | @dd($variable)                      | Laravel dd() function                                                      |
 
 ## Installation
