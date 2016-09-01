@@ -12,7 +12,8 @@
  */
 
 return [
-    'newlinesToBr' => function ($expression) {
-        return "<?php echo nl2br{$expression}; ?>";
-    },
+    'set' => function ($expression) {
+    	list($variable, $value) = explode(', ', str_replace(['(', ')'], '', $expression));
+    	return "<?php {$variable} = {$value}; ?>";
+    }
 ];

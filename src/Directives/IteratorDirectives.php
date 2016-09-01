@@ -19,6 +19,7 @@ class IteratorDirectives
      *
      * @param  \Illuminate\Filesystem\Filesystem $filesystem
      * @param  \Illuminate\Config\Repository $config
+     * 
      * @return array
      */
     public static function get($filesystem, $config)
