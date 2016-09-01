@@ -2,9 +2,10 @@
 
 This package adds custom directives for the Laravel 5 blade engine.
 
-| Command                | Description   			                                                          |
-| ---------------------- | :--------------------------------------------------------------------------------: |
-| @newlinesToBr(string)  | Inserts HTML line breaks before all newlines in a string.	 			          |
+| Directive                 | Description   			                                                          |
+| ------------------------- | :---------------------------------------------------------------------------------: |
+| @set($variable, value)    | Creating (declaring) PHP variables.                                                 |
+
 
 ## Installation
 
