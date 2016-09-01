@@ -67,6 +67,8 @@ php artisan view:clear
 ## Usage
 
 ``` bash
+@set($alpha, true)
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -77,7 +79,9 @@ php artisan view:clear
 <body>
 	<div class="panel panel-default">
 		<div class="panel-body">
-    		@newlinesToBr("foo isn't\n bar")
+    		@if($alpha)
+                <p>Welcome to Laravel!</p>
+            @endif
     	</div>
     </div>
 </body>
