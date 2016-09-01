@@ -1,5 +1,7 @@
 # Laravel Blade Directives
 
+[![Build Status](https://travis-ci.org/wilsonpinto/laravel-blade-directives.svg?branch=master)](https://travis-ci.org/wilsonpinto/laravel-blade-directives)
+
 This package adds custom directives for the Laravel 5 blade engine.
 
 | Directive                           | Description   			                                                   |
