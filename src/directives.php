@@ -25,9 +25,9 @@ return [
     	return "<?php echo implode({$delimiter}, {$array}); ?>";
     },
     'var_dump' => function ($expression) {
-    	return "<?php var_dump(with{$expression}); ?>";
+        return "<?php var_dump({$expression}); ?>";
     },
     'dd' => function ($expression) {
-        return "<?php dd(with{$expression}); ?>";
+        return "<?php dd({$expression}); ?>";
     }
 ];
