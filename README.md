@@ -1,5 +1,5 @@
 # Laravel Blade Directives
-
+[![Latest Stable Version](https://poser.pugx.org/wilsonpinto/laravel-blade-directives/v/stable.svg)](https://packagist.org/packages/wilsonpinto/laravel-blade-directives)
 [![Build Status](https://travis-ci.org/wilsonpinto/laravel-blade-directives.svg?branch=master)](https://travis-ci.org/wilsonpinto/laravel-blade-directives)
 [![License](https://poser.pugx.org/wilsonpinto/laravel-blade-directives/license)](https://packagist.org/packages/wilsonpinto/laravel-blade-directives)
 
