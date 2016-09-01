@@ -15,5 +15,19 @@ return [
     'set' => function ($expression) {
     	list($variable, $value) = explode(', ', str_replace(['(', ')'], '', $expression));
     	return "<?php {$variable} = {$value}; ?>";
+    },
+    'explode' => function ($expression) {
+    	list($delimiter, $string) = explode(', ', str_replace(['(', ')'], '', $expression));
+    	return "<?php echo explode({$delimiter}, {$string}); ?>";
+    },
+    'implode' => function ($expression) {
+    	list($delimiter, $array) = explode(', ', str_replace(['(', ')'], '', $expression));
+    	return "<?php echo implode({$delimiter}, {$array}); ?>";
+    },
+    'var_dump' => function ($expression) {
+    	return "<?php var_dump(with{$expression}); ?>";
+    },
+    'dd' => function ($expression) {
+        return "<?php dd(with{$expression}); ?>";
     }
 ];

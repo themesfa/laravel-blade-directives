@@ -11,9 +11,8 @@ return [
     |
     */    	 
     'directives' => [
-        'set' => function ($expression) {
-            list($variable, $value) = explode(', ', str_replace(['(', ')'], '', $expression));
-            return "<?php {$variable} = {$value}; ?>";
+        'datetime'   => function($expression) {
+            return "<?php echo $expression->format('m/d/Y H:i'); ?>";
         }
     ],
 

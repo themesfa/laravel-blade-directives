@@ -23,7 +23,6 @@ class BladeDirectivesTest extends \PHPUnit_Framework_TestCase
     /**
      * Blade Template Engine
      *
-     * @access private
      * @var \Jenssegers\Blade\Blade
      */
 	private $blade;
@@ -31,7 +30,6 @@ class BladeDirectivesTest extends \PHPUnit_Framework_TestCase
     /**
      * Cache folder path
      *
-     * @access private
      * @var string
      */
     private $cachePath = 'tests/cache';
@@ -39,7 +37,6 @@ class BladeDirectivesTest extends \PHPUnit_Framework_TestCase
     /**
      * Views folder path
      *
-     * @access private
      * @var string
      */
     private $viewsPath = 'tests/views';
@@ -63,19 +60,31 @@ class BladeDirectivesTest extends \PHPUnit_Framework_TestCase
     /**
      * Test set directive
      *
-     * @access  public
      * @return  void
      */
     public function testSetDirective()
     {
-        $blade_template = 'setDirective';
+        $this->assertBladeTemplates('set');
+    }
 
-        $output = $this->blade->render($blade_template);
-        
-        $this->assertEquals(
-            $this->minify($output),
-            $this->minify($this->read($blade_template))
-        );
+    /**
+     * Test explode directive
+     *
+     * @return  void
+     */
+    public function testExplodeDirective()
+    {
+        $this->assertBladeTemplates('explode');
+    }
+
+    /**
+     * Test implode directive
+     *
+     * @return  void
+     */
+    public function testImplodeDirective()
+    {
+        $this->assertBladeTemplates('implode');
     }
     
 
@@ -84,6 +93,23 @@ class BladeDirectivesTest extends \PHPUnit_Framework_TestCase
     | Helpers
     |--------------------------------------------------------------------------
     */ 
+   
+   /**
+    * Assert blade templates with html output
+    * 
+    * @param  string $template
+    * 
+    * @return void
+    */
+   private function assertBladeTemplates($template, $minify = true)
+   {    
+        $output = $this->blade->render($template);
+
+        $this->assertEquals(
+            $minify == true ? $this->minify($output) : $output,
+            $minify == true ? $this->minify($this->read($template)) : $this->read($template)
+        );
+    }
    
     /**
      * Html Writer on output folder
