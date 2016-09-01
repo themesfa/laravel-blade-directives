@@ -20,7 +20,7 @@ class AssignmentDirectives
      *
      * @param  \Illuminate\View\Compilers\BladeCompiler $blade
      * @param  array $directives
-     * 
+     *
      * @return void
      */
     public static function register($blade, array $directives)
