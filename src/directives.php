@@ -13,7 +13,7 @@
 
 return [
     'set' => function ($expression) {
-        list($variable, $value) = explode(', ', str_replace(['(', ')'], '', $expression));
+        list($variable, $value) = str_replace('+', ',', explode(', ', $expression) );
         return "<?php {$variable} = {$value}; ?>";
     },
     'explode' => function ($expression) {
